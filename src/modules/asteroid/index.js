@@ -15,9 +15,11 @@ export default withRouter(
     }),
     (dispatch) => ({
       getAllAsteroids: (id) => {
+        // dispatching function as action by middleware
         dispatch(getAllAsteroids(id));
       },
       searchAsteroidById: (id, props) => {
+        // dispatching function as action by middleware
         dispatch(searchAsteroidById(id, props));
       },
     })

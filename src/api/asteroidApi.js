@@ -1,7 +1,6 @@
 import Axios from 'axios';
 const SEARCH_ASTEROID_API = process.env.REACT_APP_SEARCH_ASTEROID;
 const GET_ALL_ASTEROIDS = process.env.REACT_APP_BROWSE_ASTEROIDS;
-
 const API_KEY = process.env.REACT_APP_API_KEY;
 
 export const searchAsteroidByIdApi = (id) => {

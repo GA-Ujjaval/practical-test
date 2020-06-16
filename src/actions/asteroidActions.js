@@ -12,6 +12,7 @@ import { searchAsteroidByIdApi, getAllAsteroidsApi } from '../api/asteroidApi';
 export const searchAsteroidById = (id, props) => {
   return (dispatch) => {
     dispatch({ type: SEARCH_ASTEROID_START });
+    //   fetch data from apis
     searchAsteroidByIdApi(id)
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
@@ -35,6 +36,7 @@ export const searchAsteroidById = (id, props) => {
 export const getAllAsteroids = (id) => {
   return (dispatch) => {
     dispatch({ type: GET_ALL_ASTEROIDS_START });
+    //   fetch data from apis
     getAllAsteroidsApi(id)
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
@@ -43,11 +45,17 @@ export const getAllAsteroids = (id) => {
             payload: res.data.near_earth_objects,
           });
         } else {
-          dispatch({ type: GET_ALL_ASTEROIDS_FAIL, payload: res.message });
+          dispatch({
+            type: GET_ALL_ASTEROIDS_FAIL,
+            payload: res.message,
+          });
         }
       })
       .catch((err) => {
-        dispatch({ type: GET_ALL_ASTEROIDS_FAIL, payload: err.message });
+        dispatch({
+          type: GET_ALL_ASTEROIDS_FAIL,
+          payload: err.message,
+        });
       });
   };
 };

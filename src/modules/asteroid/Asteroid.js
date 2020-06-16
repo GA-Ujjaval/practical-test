@@ -11,6 +11,7 @@ import {
 const Asteroid = (props) => {
   const { selectedAsteroid, loading } = props;
   useEffect(() => {
+    /** @method searchAsteroidById will search for astroid by id */
     props.searchAsteroidById(props.match.params.id);
   }, []);
 
@@ -18,6 +19,7 @@ const Asteroid = (props) => {
     <Container>
       <Box className='box-container'>
         <Card className='card'>
+          {/* if not loading then show data */}
           {!loading && selectedAsteroid ? (
             <CardContent className='card-container'>
               <h1>Name: {selectedAsteroid.name}</h1>

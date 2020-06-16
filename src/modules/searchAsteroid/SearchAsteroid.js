@@ -8,10 +8,9 @@ import {
   CardContent,
 } from '@material-ui/core';
 import './SearchAsteroid.scss';
-import { Redirect } from 'react-router-dom';
 
 const SearchAsteroid = (props) => {
-  const { asteroids, selectedAsteroid } = props;
+  const { asteroids } = props;
 
   const [searchText, setsearchText] = useState(null);
 
