@@ -11,6 +11,7 @@ export default withRouter(
     (state) => ({
       asteroids: state.asteroid.asteroids,
       selectedAsteroid: state.asteroid.selectedAsteroid,
+      error: state.asteroid.error,
     }),
     (dispatch) => ({
       getAllAsteroids: (id) => {

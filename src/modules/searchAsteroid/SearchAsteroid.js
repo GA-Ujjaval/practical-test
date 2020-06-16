@@ -7,10 +7,11 @@ import {
   TextField,
   CardContent,
 } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
 import './SearchAsteroid.scss';
 
 const SearchAsteroid = (props) => {
-  const { asteroids } = props;
+  const { asteroids, error } = props;
 
   const [searchText, setsearchText] = useState(null);
 
@@ -70,6 +71,11 @@ const SearchAsteroid = (props) => {
                 color='primary'>
                 Random Asteroid
               </Button>
+              {error && (
+                <Alert className='full-width' severity='error'>
+                  {error}
+                </Alert>
+              )}
             </CardContent>
           </Card>
         </Box>

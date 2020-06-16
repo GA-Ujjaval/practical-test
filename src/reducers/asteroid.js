@@ -52,7 +52,7 @@ export default (state = initialState, { type, payload }) => {
       return {
         ...state,
         loading: true,
-        error: false,
+        error: payload,
       };
     default:
       return state;
