@@ -66,7 +66,7 @@ const SearchAsteroid = (props) => {
               <Button
                 onClick={handleRandom}
                 className='full-width'
-                variant='contained'
+                variant='outlined'
                 color='primary'>
                 Random Asteroid
               </Button>

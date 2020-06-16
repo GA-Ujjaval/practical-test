@@ -21,9 +21,11 @@ export const searchAsteroidById = (id, props) => {
             payload: res.data,
           });
           if (props) {
+            //if if matches then redirect to astroid screen
             props.history.push(`/asteroid/${id}`);
           }
         } else {
+          // dispatch actions if success
           dispatch({ type: SEARCH_ASTEROID_FAIL, payload: res.message });
         }
       })
@@ -40,6 +42,7 @@ export const getAllAsteroids = (id) => {
     getAllAsteroidsApi(id)
       .then((res) => {
         if (res.status === 200 || res.status === 201) {
+          // dispatch actions if success
           dispatch({
             type: GET_ALL_ASTEROIDS_SUCCESS,
             payload: res.data.near_earth_objects,
